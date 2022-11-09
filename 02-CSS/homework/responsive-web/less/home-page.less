@@ -3,7 +3,11 @@
 .home {
 
   .intro {
-
+    img {
+      img {
+        .img-mix(2em, 0.5em);
+      }
+    }
     h2 {
       padding: 15px;
     }
@@ -57,7 +61,9 @@
         margin-bottom: 26px;
       }
 
-      .btn {
+      .btn { 
+        .btn-mix(@btn-bg-color,
+         @porcelain);
       }
     }
 
@@ -73,3 +79,12 @@
     }
   }
 }
+  
+@media @phone {
+  .home {
+    .intro img {
+      width: calc(100vw - 18 px);
+      margin: 0.2em 0.7em;
+      }
+    }
+  }
