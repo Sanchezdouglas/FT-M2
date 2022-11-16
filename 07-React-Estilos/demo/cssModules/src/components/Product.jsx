@@ -1,5 +1,5 @@
 import React from 'react';
-import s from  './Product.css';
+import s3 './Product.css';
 
 
 function Product(props) {
