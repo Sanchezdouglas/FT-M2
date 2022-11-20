@@ -13,20 +13,20 @@ export default function Zoo() {
       species: [],
       allAnimals: [],
    });
-
+   //Ver problema (este ejercicios es 2 # 2) 
    React.useEffect(() => {
       fetch('http://localhost:3001/zoo')
-         .then((res) => res.json())
-         .then((data) =>
-            setZoo({
-               ...zoo,
-               animals: data.animals,
-               species: data.species,
-               allAnimals: data.animals,
-            })
-         )
-         .catch((error) => console.log(error));
-   }, []);
+   .then((res) => res.json())
+   .then((data) =>
+      setZoo({
+         ...zoo,
+         animals: data.animals,
+         species: data.species,
+         allAnimals: data.animals,
+      })
+   )
+   .catch((error) => console.log(error));
+   },[]); //componentDidMount + componentDidUpdate
 
    function handleInputChange (e) {
       setZoo({ ...zoo, zooName: e.target.value });
@@ -34,7 +34,8 @@ export default function Zoo() {
 
    function handleSpecies(e) {
       setZoo({
-         ...zoo, animals: zoo.allAnimals.filter(animal => animal.species === e.target.value),
+         ...zoo,
+         animals: zoo.animals.filter(animal => animal.specie === e.target.value),
       });
    }
 
@@ -49,8 +50,11 @@ export default function Zoo() {
          <label htmlFor="nameInput">Zoo Name:</label>
          <input type="text" name="nameInput" onChange={handleInputChange} value={zoo.zooName}/>
          <h1>{zoo.zooName}</h1>
-         <Species species={zoo.species} handleAllSpecies={handleAllSpecies} handleSpecies={handleSpecies} />  
-         <Animals animals={zoo.animals} />
+         <Species
+            species={zoo.species} handleAllSpecies={handleAllSpecies} handleSpecies={handleSpecies} /> 
+         
+         <Animals
+            animals={zoo.animals} />
 
       </div>
    );

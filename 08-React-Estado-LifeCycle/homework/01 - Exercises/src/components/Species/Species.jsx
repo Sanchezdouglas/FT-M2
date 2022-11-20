@@ -1,12 +1,12 @@
-import ParseOptions from 'eleventy-plugin-toc/src/ParseOptions'
-import React from 'react'
+import React from 'react';
 
 export default function Species (props) {
   return (
     <div>
       <h2>Species</h2>
       {props.species.map((specie, idx) => (
-        <button key={idx} onClick={props.handleSpecies} value={specie}>
+        <button key={idx} onClick=
+          {props.handleSpecies} value={specie}>
           {specie}
         </button>
       ))}
