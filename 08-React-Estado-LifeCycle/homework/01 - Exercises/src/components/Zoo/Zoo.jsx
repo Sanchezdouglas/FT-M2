@@ -13,7 +13,7 @@ export default function Zoo() {
       species: [],
       allAnimals: [],
    });
-   //Ver problema (este ejercicios es 2 # 2) 
+   
    React.useEffect(() => {
       fetch('http://localhost:3001/zoo')
    .then((res) => res.json())
